@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu"> <!-- A dokumentum típusát határozza meg, jelezve, hogy ez egy HTML5 dokumentum. -->
+<head>
+    <meta charset="UTF-8"> <!-- Az oldal karakterkódolását állítja be UTF-8-ra, amely a legtöbb nyelvet támogatja. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Az oldal reszponzív viselkedését biztosítja különböző eszközökön. -->
+    <title>Malmacska</title> <!-- Az oldal címe, amely a böngésző fülén jelenik meg. -->
+    <link rel="stylesheet" href="styles.css"> <!-- Külső CSS fájlra mutató hivatkozás, amely az oldal megjelenését szabályozza. -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- A Google Fonts szolgáltatásból betölt egy betűtípust, jelen esetben a Roboto-t. -->
+</head>
+
+<body> <!-- Az oldal látható tartalma itt kezdődik. -->
+    <header> <!-- Fejléc szakasz, amely általában az oldal navigációját és logóját tartalmazza. -->
+        <img src="logo.jpg" alt="Logo" class="logo"> <!-- Az oldal logóját tartalmazza, amely egy kép fájl (logo.jpg). -->  
+        <nav class="nav"> <!-- Navigációs sáv, amely az oldal különböző részeire mutató hivatkozásokat tartalmaz. -->
+            <a href="#galeria">Galéria</a> <!-- Hivatkozás a Galéria szakaszhoz az oldal belső navigációjában. -->
+            <a href="#aktualitasok">Aktualitások</a> <!-- Hivatkozás az Aktualitások szakaszhoz. -->
+            <a href="#szabalyok">Szabályok</a> <!-- Hivatkozás a Szabályok szakaszhoz. -->
+        </nav>
+    </header>
+
+    <main> <!-- Az oldal fő tartalma itt található. -->
+        <section class="intro"> <!-- Bemutatkozó szakasz, amely szöveges tartalmat tartalmaz az oldal témájáról. -->
+            <p> <!-- Bekezdés -->
+            A Malmacska 2022.-ben nyitott meg Sopron első macskás kávézójaként. Nevét onnan kapta, hogy az üzlet a régi Kárpáti malomban került kialakításra. 
+            Tulajdonosai törekednek arra, hogy ne csak az állatok miatt legyen az embereknek pozitív élmény az itt eltöltött idő, hanem az árusított italok és sütemények is kiváló minőségűek legyenek. Ajánlatukat rendszeresen frissítik, és az évszakhoz, időszakhoz igazítják. Például: nyáron fagylalt is kapható, télen pedig bővítik forrócsoki és tea kínálatukat.
+            Jelenleg 6 cica él a kávézóban, akik mind különböző fajtájúak, és más-más helyről érkeztek Sopronba. Mindannyian nagyon barátságosak és kedvesek, azonban, ha ők nem szeretnének az emberekhez közel menni, akkor azt a vendégeknek tiszteletben kell tartani. A további szabályok ki vannak függesztve az üzlet előterében. 
+            Ez a hely az állatokon kívül azért is különleges, mert gyakran rendeznek itt különböző programokat. Például vasárnaponként tartanak cica-jógát, de körülbelül 2-3 havonta rapid randikat is szerveznek.
+            </p>
+        </section>
+
+        <section class="image-gallery"> <!-- Képgaléria szakasz, amely több képet és azokhoz tartozó gombokat tartalmaz. -->
+            <div class="image-container"> <!-- Egy kép és egy kapcsolódó gomb csoportosítása. -->
+                <img src="cicak.jpg" alt="cicák"> <!-- Az első kép a kávézó lakóiról. -->
+                <button class="gallery-button">Kávézónk lakói</button> <!-- Gomb, amely további információt kínál a kávézó lakóiról. -->
+            </div>
+
+            <div class="image-container"> <!-- Második kép és gomb csoportosítása. -->
+                <img src="kave.jpg" alt="Kávé"> <!-- A második kép a kávézó itallapjához kapcsolódik. -->
+                <button class="gallery-button">Itallap</button>  <!-- Gomb az itallap megtekintéséhez. -->
+            </div>
+
+            <div class="image-container"> <!-- Harmadik kép és gomb csoportosítása. -->
+                <img src="program1.jpg" alt="Programok"> <!-- Harmadik kép, amely a kávézó programjait ábrázolja. -->
+                <button class="gallery-button">Programok</button> <!-- Gomb a programok megtekintéséhez. -->
+            </div>
+        </section>        
+    </main>
+
+    <footer class="footer"> <!-- Lábléc, amely kapcsolatfelvételi információkat és ikonokat tartalmaz. -->
+        <div class="footer-item"> <!-- Az első lábléc elem, amely a cím adatokat tartalmazza. -->
+            <img src="mappin.png" alt="Cím ikon" class="footer-icon"> <!-- Ikon a címhez. -->
+            <p>Kárpáti Malom, Erdei Malom köz 4., Sopron, 9400</p> <!-- Szöveg a pontos címmel. -->
+        </div>
+
+        <div class="footer-item"> <!-- A második lábléc elem, amely a telefonszámot tartalmazza. -->
+            <img src="telefon.png" alt="Telefonszám ikon" class="footer-icon"> <!-- Ikon a telefonszámhoz. -->
+            <p>+36 20 808 1815</p> <!-- Szöveg a telefonszámmal. -->
+        </div>
+
+        <div class="footer-item"> <!-- A harmadik lábléc elem, amely az e-mail címet tartalmazza. -->
+            <img src="email.png" alt="E-mail ikon" class="footer-icon"> <!-- Ikon az e-mail címhez. -->
+            <p>malmacska@gmail.com</p> <!-- Szöveg az e-mail címmel. -->
+        </div>
+
+        <div class="footer-item"> <!-- A negyedik lábléc elem, amely az Instagram fiókot tartalmazza. -->
+            <img src="instagram.png" alt="Instagram ikon" class="footer-icon"> <!-- Ikon az Instagramhoz. -->
+            <p>malmacska</p> <!-- Szöveg az Instagram fiók nevével. -->
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+VIC:wght@100..400&display=swap');
+/* Betöltjük a Google Fonts betűtípusokat, hogy használhassuk a Playfair Display és Playwrite AU VIC betűtípusokat az oldal elemeiben. */
+
+:root {
+    --primary-bg: #F5F1EB; /* Az alapértelmezett háttérszín, világos bézs árnyalat. */
+    --primary-text: #333; /* Az alapértelmezett szövegszín, sötétszürke. */
+    --border-color: #000; /* Az alapértelmezett fekete szín a keretekhez. */
+    --hover-bg: #e2ded8; /* Hover (egér fölé húzás) esetén alkalmazandó háttérszín. */
+}
+/* Globális változók beállítása, hogy a színek és stílusok egyszerűen újrahasználhatók legyenek. */
+
+body {
+    font-family: 'Playfair Display', serif; /* A Playfair Display betűtípus alkalmazása az egész oldalra. */
+    margin: 0; /* Az alapértelmezett margók eltávolítása. */
+    padding: 0; /* Az alapértelmezett padding eltávolítása. */
+    line-height: 1.6; /* Kényelmesebb sortávolság a szövegek között. */
+    background-color: #f0f0f0; /* Halvány szürke háttérszín az oldal egészére. */
+}
+
+header {
+    display: flex; /* A fejléc elemeit rugalmas dobozmodellben helyezzük el. */
+    justify-content: space-between; /* Az elemek széthúzása (balra és jobbra igazítás). */
+    align-items: center; /* Az elemek függőleges középre igazítása. */
+    background-color: var(--primary-bg); /* A fejléc háttérszíne a globális változóból. */
+    color: var(--primary-text); /* A fejléc szövegének színe. */
+    padding: 10px 20px; /* Térköz a fejléc belső szélei és tartalma között. */
+    position: relative; /* A fejléc pozíciója a rétegezés (z-index) működéséhez. */
+    z-index: 10; /* A fejléc magasabb rétegbe kerül, hogy más elemek mögötte ne takarják. */
+}
+
+header .logo {
+    width: 50px; /* A logó szélessége 50 pixel. */
+    height: auto; /* Az arányok megőrzése érdekében az automatikus magasság. */
+}
+
+.nav {
+    display: flex; /* A navigációs linkeket vízszintesen helyezzük el. */
+    gap: 15px; /* Térköz a linkek között. */
+}
+
+.nav a {
+    color: var(--primary-text); /* A linkek szövegének színe. */
+    text-decoration: none; /* Aláhúzás eltávolítása a linkekről. */
+    padding: 5px 10px; /* Térköz a linkek körül. */
+    border-radius: 5px; /* A linkek sarkainak lekerekítése. */
+    transition: background-color 0.3s ease; /* Finom átmenet hover esetén a háttérszín változásához. */
+}
+
+.nav a:hover {
+    background-color: #555; /* Sötétebb szürke szín hover esetén. */
+}
+
+main {
+    padding: 20px; /* Térköz az oldal fő tartalmának szélei körül. */
+    background-image: url('hatter.jpg'); /* A háttérkép hozzáadása a fő szakaszhoz. */
+    background-size: cover; /* A kép mérete kitölti a rendelkezésre álló területet. */
+    background-position: center; /* A kép középre igazítása. */
+    background-repeat: no-repeat; /* A kép nem ismétlődik. */
+    position: relative; /* A rétegezés (z-index) és ::before elem miatt szükséges. */
+}
+
+main::before {
+    content: ''; /* Fedőréteg létrehozása. */
+    position: absolute; /* Az elem pozíciója a main-hez viszonyítva. */
+    top: 0; /* A fedőréteg tetejének igazítása. */
+    left: 0; /* A fedőréteg bal szélének igazítása. */
+    width: 100%; /* A fedőréteg szélessége. */
+    height: 100%; /* A fedőréteg magassága. */
+    background-color: rgba(0, 0, 0, 0.5); /* 50%-osan átlátszó fekete fedőréteg. */
+    pointer-events: none; /* A réteg ne akadályozza az interakciókat. */
+    z-index: 1; /* A réteg rétegszintje. */
+}
+
+main * {
+    position: relative; /* A fő tartalom fölé helyezés a ::before elem felett. */
+    z-index: 2; /* A fő tartalom magasabb rétegszintje. */
+}
+
+.intro {
+    max-width: 720px; /* A szövegdoboz maximális szélessége. */
+    margin: 0 auto; /* Középre igazítás. */
+    padding: 20px; /* Térköz a szövegdoboz belső szélei és tartalma között. */
+    background-color: var(--primary-bg); /* A háttérszín a globális változóból. */
+    border-radius: 10px; /* A doboz sarkainak lekerekítése. */
+    color: var(--primary-text); /* A szöveg színe. */
+    text-align: justify; /* Igazított szöveg. */
+    line-height: 1.8; /* Nagyobb sortávolság a jobb olvashatóság érdekében. */
+    border: 1px solid var(--border-color); /* Vékony fekete keret a doboz körül. */
+}
+
+.image-gallery {
+    display: flex; /* A képek elrendezése rugalmas dobozmodellben. */
+    justify-content: center; /* A képek középre igazítása. */
+    align-items: flex-start; /* A képek tetejének igazítása. */
+    flex-wrap: wrap; /* Többsoros elrendezés engedélyezése, ha szükséges. */
+    gap: 20px; /* Térköz a képek között. */
+    margin-top: 20px; /* Térköz a galéria és az előző szakasz között. */
+}
+
+.image-container {
+    display: flex; /* A képek és gombok függőleges elrendezése. */
+    flex-direction: column; /* Az elemek egymás alá kerülnek. */
+    align-items: center; /* Középre igazítás vízszintesen. */
+    gap: 10px; /* Térköz a képek és a gombok között. */
+}
+
+.image-container img {
+    width: 200px; /* Kép szélessége. */
+    height: 150px; /* Fix kép magasság. */
+    border-radius: 8px; /* A képek sarkainak lekerekítése. */
+    border: 2px solid var(--border-color); /* Fekete keret. */
+    object-fit: cover; /* A kép kitölti a rendelkezésre álló helyet, megőrizve az arányokat. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Finom árnyék a képek alatt. */
+}
+
+.gallery-button {
+    display: inline-block; /* A gomb blokkos elemmé alakítása. */
+    margin-top: 10px; /* Térköz a gomb és a kép között. */
+    padding: 10px 20px; /* Belső térköz a gombon belül. */
+    background-color: var(--primary-bg); /* A gomb háttérszíne. */
+    color: var(--primary-text); /* A szöveg színe. */
+    border: 1px solid var(--border-color); /* Fekete keret. */
+    border-radius: 10px; /* A gomb sarkainak lekerekítése. */
+    font-size: 16px; /* A gomb szövegének mérete. */
+    font-family: 'Playfair Display', serif; /* Betűtípus beállítása. */
+    cursor: pointer; /* A kurzor mutatókézre vált a gomb fölött. */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+/* Ez a sor a gomb hover állapotában történő animációt szabályozza:
+   - `transform 0.3s ease`: A `transform` tulajdonság változása (pl. skálázás) 0.3 másodperc alatt történik, sima (ease) átmenettel.
+   - `background-color 0.3s ease`: A háttérszín változása szintén 0.3 másodperc alatt történik, sima átmenettel. */
+}
+
+.gallery-button:hover {
+    transform: scale(1.1); /* Az `hover` állapotban a gomb mérete 1.1-szeresére nő, hogy interaktív visszajelzést nyújtson. */
+    background-color: var(--hover-bg); /* A gomb háttérszíne a `--hover-bg` változóra változik, világosabb árnyalatot adva. */
+}
+
+footer {
+    background-color: var(--primary-bg); /* A lábléc háttérszínét a globális `--primary-bg` változóval állítjuk be. */
+    color: var(--primary-text); /* A lábléc szövegének színét a globális `--primary-text` változó határozza meg. */
+    display: flex; /* A lábléc tartalmát rugalmas dobozmodellben helyezi el, így az elemek könnyen elrendezhetők. */
+    flex-wrap: wrap; /* Engedélyezi, hogy a lábléc elemei több sorban is megjelenjenek, ha nem férnek el egy sorban. */
+    justify-content: space-around; /* Egyenletesen elosztja az elemeket a szülőkonténerben, térközt biztosítva közöttük. */
+    padding: 20px; /* Belső térköz a lábléc szélén, hogy a tartalom ne érjen közvetlenül a széléhez. */
+    text-align: center; /* Középre igazítja a szöveget a láblécben. */
+}
+
+.footer-item {
+    display: flex; /* A lábléc elem rugalmas dobozmodellben történő elrendezése. */
+    align-items: center; /* A tartalom középre igazítása függőlegesen. */
+    gap: 10px; /* Térköz az ikon és a szöveg között. */
+    margin: 10px 0; /* Függőleges térköz az egyes lábléc elemek között. */
+}
+
+.footer-icon {
+    width: 24px; /* Az ikon szélessége 24 pixelre van állítva, hogy megfelelő méretű legyen. */
+    height: auto; /* Az ikon magassága automatikusan igazodik az arányokhoz, hogy ne torzuljon. */
+}
+
+.footer-item p {
+    margin: 0; /* Az alapértelmezett margó eltávolítása a bekezdés körül. */
+    font-size: 14px; /* A szöveg méretének beállítása 14 pixelre, hogy olvasható legyen. */
+}
